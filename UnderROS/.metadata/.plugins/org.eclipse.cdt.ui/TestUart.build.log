@@ -1,0 +1,20 @@
+17:39:01 **** Incremental Build of configuration Debug for project TestUart ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32F103xE -DUSE_HAL_DRIVER -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/ITC/Module/User_Uart -I../Drivers/ITC/Module/User_Uart/cfg -I../Drivers/ITC/Module/User_Uart/ip/usart -I../Drivers/ITC/Module/User_Uart/protocol/slip -I../Drivers/ITC/Mid/base -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TestUart.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\Study\Hoc_STM\STM32_Course\stm32_advance_online1\TestUart\STM32F103RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestUart.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestUart.elf
+ 
+arm-none-eabi-objdump -h -S  TestUart.elf  > "TestUart.list"
+arm-none-eabi-objcopy  -O binary  TestUart.elf  "TestUart.bin"
+arm-none-eabi-size   TestUart.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7440	     32	   2416	   9888	   26a0	TestUart.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestUart.bin
+ 
+Finished building: TestUart.list
+ 
+
+17:39:23 Build Finished. 0 errors, 0 warnings. (took 21s.802ms)
+

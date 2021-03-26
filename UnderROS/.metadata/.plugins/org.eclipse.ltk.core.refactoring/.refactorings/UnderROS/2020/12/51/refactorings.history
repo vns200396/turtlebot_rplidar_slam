@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;UnderROS/Drivers/Device/Cỏe&apos; to &apos;Core&apos;" description="Rename resource &apos;Cỏe&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Drivers/Device/Cỏe" name="Core" stamp="1608023576907" updateReferences="true"/>
+</session>

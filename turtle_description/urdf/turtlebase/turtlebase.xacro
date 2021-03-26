@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+
+<robot name="box_robot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+   <!-- Define a number of dimensions using properties -->
+   <property name="torso_offset_x" value="0.0" />
+   <property name="torso_offset_y" value="0.0" />
+   <property name="torso_offset_z" value="0.23" /> <!--base_height/2+torso_height/2 -->
+
+   <!-- Include all component files -->
+   <xacro:include filename="$(find turtle_description)/urdf/turtlebase/materials.urdf.xacro" />
+   <xacro:include filename="$(find turtle_description)/urdf/turtlebase/base.urdf.xacro" />
+   <xacro:include filename="$(find turtle_description)/urdf/turtlebase/torso.urdf.xacro" />
+   
+   <!-- Add the base and wheels -->
+   <base name="base" color="Black"/>
+   
+   <!-- Attach the torso -->
+<!--
+   <torso name="torso" parent="base" color="Grey">
+      <origin xyz="${torso_offset_x} ${torso_offset_y} ${torso_offset_z}" rpy="0 0 0" />
+   </torso>
+           <mesh filename="package://turtle_description/stl/RpLidar.stl" scale="0.001 0.001 0.001"/> 
+-->
+
+ <joint name="laser" type="fixed">
+    <origin xyz="0.13 0 ${base_length/2}" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="base_laser_link" />
+  </joint>
+
+  <link name="base_laser_link">
+    <visual>
+      <origin rpy="0 0 1.5708" xyz="-0.15 0.24 -0.06"/>
+      <geometry>
+        <mesh filename="package://turtle_description/stl/RpLidar.stl" scale="0.001 0.001 0.001"/> 
+      </geometry>
+      <material name="DarkGrey" />
+    </visual>
+    <!--
+    <inertial>
+      <mass value="0.000001" />
+      <origin xyz="0 0 0" />
+      <inertia ixx="0.0001" ixy="0.0" ixz="0.0"
+        iyy="0.0001" iyz="0.0"
+        izz="0.0001" />
+    </inertial> -->
+    <collision>
+      <origin rpy="0 0 0"  xyz="-0.15 0.24 -0.05"/>
+      <geometry>
+        <mesh filename="package://turtle_description/stl/RpLidar.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+
+<!-- flag -->
+  <link name="front_flag">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <box size="0.05 0.05 0.001" />
+        </geometry>
+        <material name="TransparentGreen" />
+      </visual>
+  </link>
+
+  <joint name="front_point_flag" type="fixed">
+    <origin xyz="0.1 0 ${base_length/2}" rpy="0 0 0" />
+    <parent link="base_link"/>
+    <child link="front_flag" />
+  </joint>
+
+</robot>
+
+

@@ -1,0 +1,5 @@
+<launch>
+   <node name="turtle_driver" pkg="turtle_driver" type="turtle_driver_minimal.py" output="screen">
+      <rosparam file="$(find turtle_driver)/cfg/my_turtle_params_minimal.yaml" command="load" />
+   </node>
+</launch>

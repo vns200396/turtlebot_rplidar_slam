@@ -1,0 +1,14 @@
+17:45:40 **** Incremental Build of configuration Debug for project HCSR04_PWidth_F103 ****
+make -j4 all 
+arm-none-eabi-size   HCSR04_PWidth_F103.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12756	     20	   1732	  14508	   38ac	HCSR04_PWidth_F103.elf
+Finished building: default.size.stdout
+ 
+17:46:50 **** Incremental Build of configuration Debug for project HCSR04_PWidth_F103 ****
+make -j4 all 
+arm-none-eabi-size   HCSR04_PWidth_F103.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12756	     20	   1732	  14508	   38ac	HCSR04_PWidth_F103.elf
+Finished building: default.size.stdout
+ 

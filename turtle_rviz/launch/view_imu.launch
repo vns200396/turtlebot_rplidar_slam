@@ -1,0 +1,4 @@
+<launch>
+  <node name="view_imu_rviz" pkg="rviz" type="rviz" args="-d $(find turtle_driver)/cfg/adxl345_imu.rviz"/>
+</launch>
+
