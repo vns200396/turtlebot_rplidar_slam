@@ -4,7 +4,7 @@ ROS distro: melodic
 
 Hardware: 
 	Raspberry Pi 4
-	ARM-STM32f103c8t6
+	STM32f103c8t6-ARM
 	RPlidar A1
 	Ultrasonic SRF04
 	IMU ADXL345
